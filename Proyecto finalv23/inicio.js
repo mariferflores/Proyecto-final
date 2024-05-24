@@ -1,5 +1,3 @@
-// JavaScript para mostrar y ocultar los botones al pasar el cursor sobre "Diseño Estructural"
-
 document.addEventListener("DOMContentLoaded", function() {
     const desplegable = document.getElementById("desplegable");
     const disenoEstructural = document.getElementById("diseno-estructural");
@@ -41,4 +39,3 @@ document.addEventListener('click', function(event) {
         menuToggle.querySelector('input').checked = false;
     }
 });
-

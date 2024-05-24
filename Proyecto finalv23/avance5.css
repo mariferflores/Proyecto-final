@@ -2,16 +2,23 @@ header {
     color: #fff;
     padding: 20px;
     text-align: center;
-    font-family: Arial;
+    font-family: Arial;text-decoration: none;
+}
+
+header a{
+    text-decoration: none;
+   
 }
 
 h1, h2{
     background: linear-gradient(to right, #209dfa, #46297d);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-decoration: none;
 }
 h1{
-	padding-left: 400px;
+    text-decoration: none;
+    text-align: center;
 	color: black;
 	font-size: 40px;
 }

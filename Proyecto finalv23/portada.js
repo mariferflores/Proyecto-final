@@ -7,4 +7,3 @@ document.addEventListener('click', function(event) {
         menuToggle.querySelector('input').checked = false;
     }
 });
-

@@ -1,100 +1,113 @@
+/* General Styles */
+body {
+    background-image: url('img/portada.jpg');
+    background-size: cover; /* Make background cover the whole area */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+/* Header and Menu */
 header {
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    font-family: Arial;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
+.menu-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
-#desplegable {
-    position: absolute;
-    display: none;
-    background-color: #333;
-    padding: 10px;
-    border-radius: 5px;
-}
-h2{
-    padding-top: 10px;
-    padding-left: 15px;
-    color: black;
-}
-#desplegable button {
-    display: block;
-    margin-bottom: 5px;
-    margin-left: 500px;
-    padding: 5px 10px;
-    color: white;
-    background-color: #555;
-    border: none;
-    border-radius: 5px;
+.menu-toggle label {
+    font-size: 30px;
     cursor: pointer;
 }
 
-#desplegable button:hover {
-    background-color: #777;
+.menu-toggle input {
+    display: none;
 }
-#contenedor1{
-    background-color: #79A1FF;
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    width: 200px;
+    background-color: #333;
+    transition: left 0.3s ease;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    box-sizing: border-box;
 }
-body{
-	background-image: url('img/portada.jpg');
-    background-size: cover; /* Para que la imagen cubra todo el fondo */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Fija el fondo para que no se mueva */
-    position: relative; /* Para que el div overlay se posicione correctamente */ 
+
+.menu li {
+    margin: 10px 0;
 }
-#titulo{
-    background-color: rgba(66,80,96,0.3);
-    padding: 20px; /* Espacio alrededor del contenido */
-    border-radius: 10px; /* Bordes redondeados */
-    font-family: Arial, sans-serif; /* Fuente */
-    position: fixed; /* Posicionamiento fijo para que se mantenga en la misma posición incluso al hacer scroll */
-    bottom: 20px; /* Distancia desde la parte inferior */
-    right: 20px; /* Distancia desde la derecha */
-}
-#titulo h1{
-    color: white;
-	font-size: 70px;
-	font-family: Arial;
-}
-#titulo h2, h3{
-	color: white;
-	font-size: 30px;
-	font-family: Arial;
-}
-footer {
+
+.menu a {
     color: #fff;
-    padding: 20px 0;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+.menu-toggle input:checked ~ .menu {
+    left: 0;
+}
+
+/* Title Section */
+#titulo {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 90%;
     text-align: center;
 }
 
+#titulo h1 {
+    font-size: 2rem;
+    margin: 0 0 10px;
+}
+
+#titulo h2, #titulo h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Social Media Section */
 .redes-sociales {
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 20px 0;
 }
 
 .redes-sociales h2 {
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 .divider {
+    width: 50px;
     height: 2px;
     background-color: #fff;
-    margin: 0 auto 20px auto;
-    width: 50px;
+    margin: 10px auto;
 }
 
 .iconos-redes {
@@ -116,92 +129,28 @@ footer {
     transform: scale(1.2);
 }
 
-.menu-toggle {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    #titulo {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .menu {
+        width: 70%;
+    }
 }
 
-.menu-toggle input {
-    display: none;
-}
+@media screen and (max-width: 480px) {
+    #titulo h1 {
+        font-size: 1.5rem;
+    }
 
-.menu-toggle label {
-    display: block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    color: #fff;
-    font-size: 20px;
-    border-radius: 5px;
-}
+    #titulo h2, #titulo h3 {
+        font-size: 1rem;
+    }
 
-.menu {
-    position: fixed;
-    top: 0;
-    left: -200px;
-    width: 200px;
-    height: 100%;
-    background-color: #333;
-    padding: 50px 20px;
-    box-sizing: border-box;
-    transition: left 0.3s ease;
-    overflow-y: auto;
-}
-
-.menu li {
-    list-style: none;
-    margin-bottom: 20px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.menu a:hover {
-    color: #bbb;
-}
-
-.menu-toggle input:checked ~ .menu {
-    left: 0;
-}
-.redes-sociales {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.redes-sociales h2 {
-    color: #fff;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.divider {
-    background-color: #fff;
-    height: 1px;
-    margin-bottom: 10px;
-}
-
-.iconos-redes {
-    display: flex;
-    justify-content: space-between;
-}
-
-.iconos-redes a {
-    display: inline-block;
-}
-
-.iconos-redes img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    .menu {
+        width: 100%;
+    }
 }
